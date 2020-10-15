@@ -163,6 +163,25 @@ public class Graph {
 
     }
 
+
+    public void mostrarGrafo()
+    {
+        ListLinked<Edge> edges;
+        for (int i = 0; i < vertexs.length; i++) {
+            Vertex vertex = vertexs[i];
+            System.out.print("vertice: "+vertex.getLabel()+" tiene relacion con: ");
+            edges = vertex.getEdges();
+            Node<Edge> aux = edges.getHead();
+            while(aux!=null)
+            {
+                System.out.print(aux.getData().getV2().getLabel()+"\t");
+                aux = aux.getLink();
+            }
+            System.out.println();
+        }     
+    }
+
+
     public static void main(String[] args) {
         Graph graph = new Graph(false);
 
@@ -181,5 +200,6 @@ public class Graph {
         graph.addVertex(Riberalta);
 
         graph.readFileInput("bolivia.txt");
+        
     }
 }

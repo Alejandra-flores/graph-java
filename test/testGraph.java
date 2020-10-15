@@ -7,7 +7,7 @@ public class testGraph {
     static void testPrintAndrea() {
         Graph graph = new Graph(false);
         graph.readFileInput("bolivia.txt");
-        graph.printGraph();
+        graph.mostrarGrafo();
         graph.BFS(graph.getVertexList().getHead().getData());
     }
 
